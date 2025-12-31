@@ -2,7 +2,7 @@
 
 Firebase Hosting を使用したテストアプリケーション
 
-## 自動デプロイ
+## 自動デプロイ 
 
 このプロジェクトは GitHub Actions を使用して、`main` ブランチへのマージ時に自動的に Firebase Hosting にデプロイされます。
 
