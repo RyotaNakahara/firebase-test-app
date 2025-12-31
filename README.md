@@ -28,6 +28,26 @@ Firebase サービスアカウントの JSON キーを設定します。
 
 **重要**: JSON ファイルの内容全体（`{` から `}` まで）をそのままコピーしてください。
 
+### トラブルシューティング
+
+#### PRマージ時にデプロイされない場合
+
+1. **GitHub Secretsの確認**
+   - `FIREBASE_SERVICE_ACCOUNT` が正しく設定されているか確認
+   - シークレット名は正確に `FIREBASE_SERVICE_ACCOUNT` である必要があります
+
+2. **GitHub Actionsの実行ログを確認**
+   - リポジトリの **Actions** タブでワークフローの実行状況を確認
+   - エラーメッセージを確認してください
+
+3. **手動実行でテスト**
+   - **Actions** タブで `Deploy to Firebase Hosting` ワークフローを選択
+   - **Run workflow** ボタンから手動で実行できるか確認
+
+4. **ブランチ名の確認**
+   - デフォルトブランチが `main` であることを確認
+   - 異なる場合は、`.github/workflows/firebase-deploy.yml` のブランチ名を修正
+
 ## ローカル開発
 
 ```bash
