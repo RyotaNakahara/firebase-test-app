@@ -30,6 +30,25 @@ Firebase サービスアカウントの JSON キーを設定します。
 
 ### トラブルシューティング
 
+#### `Error: Input required and not supplied: firebaseServiceAccount` エラーが出る場合
+
+このエラーは、GitHub Secretsに`FIREBASE_SERVICE_ACCOUNT`が設定されていないことを示しています。
+
+**解決方法：**
+
+1. GitHubリポジトリの **Settings** → **Secrets and variables** → **Actions** に移動
+2. **Repository secrets** セクションで `FIREBASE_SERVICE_ACCOUNT` が存在するか確認
+3. 存在しない場合、または値が空の場合は、以下の手順で設定：
+   - **New repository secret** をクリック
+   - Name: `FIREBASE_SERVICE_ACCOUNT` （正確にこの名前で）
+   - Secret: Firebase サービスアカウントの JSON キー全体を貼り付け
+   - **Add secret** をクリック
+
+**注意点：**
+- シークレット名は大文字・小文字を区別します（`FIREBASE_SERVICE_ACCOUNT` が正しい）
+- JSONファイルの内容全体（`{` から `}` まで）をコピーしてください
+- 改行や空白も含めて、そのまま貼り付けてください
+
 #### PRマージ時にデプロイされない場合
 
 1. **GitHub Secretsの確認**
